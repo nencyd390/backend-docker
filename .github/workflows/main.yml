@@ -23,6 +23,7 @@ jobs:
         docker build -t nencyd390/backend-docker:latest .
 
     - name: Push Docker Image
-      run: |
-        docker push ${{ nencyd390/backend-docker:latest
+  run: |
+    docker push ${{ secrets.DOCKER_USERNAME }}/backend-docker:latest
+    docker push ${{ secrets.DOCKER_USERNAME }}/backend-docker:${{ github.sha }}
 
